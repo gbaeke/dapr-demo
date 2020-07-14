@@ -1,0 +1,13 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: pubsub-servicebus
+spec:
+  type: pubsub.azure.servicebus
+  metadata:
+  - name: connectionString
+    secretKeyRef:
+      name: dapr-sb
+      key: ServiceBus
+auth:
+  secretStore: kubernetes

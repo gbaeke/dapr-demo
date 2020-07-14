@@ -1,0 +1,18 @@
+{
+  "bindings": [
+    {
+      "type": "eventHubTrigger",
+      "name": "IoTHubMessages",
+      "direction": "in",
+      "eventHubName": "gebahub-b",
+      "connection": "GEBAHUB",
+      "cardinality": "many",
+      "consumerGroup": "keda"
+    },
+    {
+      "type": "daprPublish",
+      "direction": "out",
+      "name": "alert"
+    }
+  ]
+}
