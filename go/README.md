@@ -1,16 +1,18 @@
-# Go Server
+# Go GRPC Sample
+
+## Go Server
 
 Start the Go server with:
 
 dapr run --app-id goserver --protocol grpc --app-port 5001 go run main.go
 
-# Go client
+## Go client
 
 Start the Go client with:
 
 dapr run --app-id goclient go run main.go
 
-# Python client
+## Python client
 
 Start the Python client with:
 
