@@ -41,7 +41,7 @@ func main() {
 	}
 }
 
-// EchoMethod is a simple demo method to invoke
+// HelloFromGo is a simple demo method to invoke
 func (s *server) HelloFromGo(messageID float64) string {
 	return fmt.Sprintf("Message ID = %v", messageID)
 
@@ -55,7 +55,7 @@ func (s *server) OnInvoke(ctx context.Context, in *commonv1pb.InvokeRequest) (*c
 	switch in.Method {
 	case "HelloFromGo":
 
-		// in.Data contains the data sent by the caller
+		// in.Data.Value contains the data sent by the caller
 		data := fmt.Sprintf("%s", in.Data.Value)
 
 		// convert data to JSON
@@ -65,7 +65,7 @@ func (s *server) OnInvoke(ctx context.Context, in *commonv1pb.InvokeRequest) (*c
 			response = ""
 		}
 
-		// call HelloFromGo passing a message struct
+		// call HelloFromGo passing the message Id
 		logger.Println(helloMessage)
 		response = s.HelloFromGo(helloMessage["messageId"].(float64))
 		logger.Println(response)
