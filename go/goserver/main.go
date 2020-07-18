@@ -77,14 +77,12 @@ func (s *server) OnInvoke(ctx context.Context, in *commonv1pb.InvokeRequest) (*c
 	}, nil
 }
 
-// Dapr will call this method to get the list of bindings the app will get invoked by. In this example, we are telling Dapr
-// To invoke our app with a binding named storage
+// Dapr will call this method to get the list of bindings the app will get invoked by.
 func (s *server) ListInputBindings(ctx context.Context, in *empty.Empty) (*pb.ListInputBindingsResponse, error) {
 	return nil, nil
 }
 
-// Dapr will call this method to get the list of topics the app wants to subscribe to. In this example, we are telling Dapr
-// To subscribe to a topic named TopicA
+// Dapr will call this method to get the list of topics the app wants to subscribe to.
 func (s *server) ListTopicSubscriptions(ctx context.Context, in *empty.Empty) (*pb.ListTopicSubscriptionsResponse, error) {
 	return nil, nil
 }
