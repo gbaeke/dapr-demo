@@ -1,0 +1,15 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: influx
+spec:
+  type: bindings.influx
+  metadata:
+  - name: Url
+    value: https://url
+  - name: Token
+    value: "token"
+  - name: Org
+    value: "org"
+  - name: Bucket
+    value: "bucket"
